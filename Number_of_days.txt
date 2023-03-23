@@ -1,0 +1,9 @@
+--	Number of days
+
+SELECT
+	Courses.course_name AS course_name,
+	Courses.course_price AS course_price
+FROM Courses
+	INNER JOIN Orders ON Orders.ord_course = Courses.course_id
+WHERE
+	CAST(Orders.ord_datatime as date) BETWEEN '2023-03-23' AND '2023-03-23' + 7
